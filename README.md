@@ -11,7 +11,7 @@ Contributions are of course welcomed via pull request. I'd also appreciate any f
 ## Installation
 
 Via Nuget:
-> npm install Contentful.NET
+> Install-Package Contentful.NET
 
 ## Usage
 
