@@ -1,4 +1,5 @@
 ﻿using System;
+using Contentful.NET.Search.Enums;
 
 namespace Contentful.NET.Search.Filters
 {

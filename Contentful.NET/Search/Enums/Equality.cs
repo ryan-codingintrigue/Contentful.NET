@@ -1,4 +1,4 @@
-﻿namespace Contentful.NET.Search
+﻿namespace Contentful.NET.Search.Enums
 {
     public enum Equality
     {

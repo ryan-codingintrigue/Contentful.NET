@@ -1,4 +1,5 @@
-﻿using Contentful.NET.Search.Enums;
+﻿using System;
+using Contentful.NET.Search.Enums;
 
 namespace Contentful.NET.Search.Filters
 {
@@ -12,6 +13,7 @@ namespace Contentful.NET.Search.Filters
 
         public OrderBySearchFilter(string propertyName, OrderByDirection direction)
         {
+            if (string.IsNullOrEmpty(propertyName)) throw new ArgumentException("Property Name must be specified");
             Field = "order";
             Comparison = direction == OrderByDirection.Ascending ? "=" : "=-";
             Value = propertyName;

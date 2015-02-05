@@ -4,7 +4,7 @@ using Contentful.NET.Search.Enums;
 using Contentful.NET.Search.Filters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Contentful.NET.Tests.Search
+namespace Contentful.NET.Tests.Search.Filters
 {
     [TestClass]
     public class NumericSearchFilterTests

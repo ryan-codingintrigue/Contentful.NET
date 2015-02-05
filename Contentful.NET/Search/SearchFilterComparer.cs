@@ -16,7 +16,7 @@
         internal static readonly SearchFilterComparer LocationWithin = new SearchFilterComparer("[within]=");
         internal static readonly SearchFilterComparer FullText = new SearchFilterComparer("\\[match\\]=");
 
-        public SearchFilterComparer(string value)
+        private SearchFilterComparer(string value)
         {
             _value = value;
         }

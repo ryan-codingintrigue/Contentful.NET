@@ -1,33 +1,34 @@
 ﻿using System;
 using Contentful.NET.Search;
+using Contentful.NET.Search.Enums;
 using Contentful.NET.Search.Filters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Contentful.NET.Tests.Search
+namespace Contentful.NET.Tests.Search.Filters
 {
     [TestClass]
-    public class EqualitySearchFilterTests
+    public class InclusionSearchFilterTests
     {
         [TestMethod]
-        public void TestCreatesEqualsFilterByDefault()
+        public void TestCreatesInFilterByDefault()
         {
             const string propertyName = "prop";
             const string equalityValue = "asd";
-            var filter = new EqualitySearchFilter(propertyName, equalityValue);
+            var filter = new InclusionSearchFilter(propertyName, equalityValue);
             Assert.AreEqual(propertyName, filter.Field);
             Assert.AreEqual(equalityValue, filter.Value);
-            Assert.AreEqual(SearchFilterComparer.Equal.ToString(), filter.Comparison);
+            Assert.AreEqual(SearchFilterComparer.In.ToString(), filter.Comparison);
         }
 
         [TestMethod]
-        public void TestCreatesNotEqualFilter()
+        public void TestCreatesNotInFilter()
         {
             const string propertyName = "prop";
             const string equalityValue = "asd";
-            var filter = new EqualitySearchFilter(propertyName, equalityValue, Equality.NotEqual);
+            var filter = new InclusionSearchFilter(propertyName, equalityValue, InEquality.NotIn);
             Assert.AreEqual(propertyName, filter.Field);
             Assert.AreEqual(equalityValue, filter.Value);
-            Assert.AreEqual(SearchFilterComparer.NotEqual.ToString(), filter.Comparison);
+            Assert.AreEqual(SearchFilterComparer.NotIn.ToString(), filter.Comparison);
         }
 
         [TestMethod]
@@ -35,7 +36,7 @@ namespace Contentful.NET.Tests.Search
         public void TestThrowsExceptionOnInvalidPropertyName()
         {
             const string equalityValue = "asd";
-            new EqualitySearchFilter(null, equalityValue);
+            new InclusionSearchFilter("", equalityValue, InEquality.NotIn);
         }
     }
 }
