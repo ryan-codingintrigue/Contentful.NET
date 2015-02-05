@@ -16,16 +16,19 @@ Via Nuget:
 ## Usage
 
 The `ContentfulClient` is the main implementation of the API. It can be injected as a dependency by using the `IContentfulClient` interface. It requires a valid Access Token and a SpaceId passed in as a constructor:
-
-    IContentfulClient client = new ContentfulClient("productionAccessToken", "spaceId");
+```cs
+IContentfulClient client = new ContentfulClient("productionAccessToken", "spaceId");
+```
 
 It contains two methods:
-
-    GetAsync<T>(id)
+```cs
+GetAsync<T>(id)
+```
 
 Returns a single item from the API
-    
-    SearchAsync<SearchResult<T>>(searchFilters, orderByProperty, orderByDirection, skip, limit, includeLevels)
+```cs    
+SearchAsync<SearchResult<T>>(searchFilters, orderByProperty, orderByDirection, skip, limit, includeLevels)
+```
     
 Returns a set of results based on the provided search criteria.
 
@@ -57,14 +60,15 @@ integer value between 1 and 10, indicating the number of levels deep the API sho
 ### Built-In Properties
 
 When creating `SearchFilters`, it is sometimes useful to query standard Contentful properties. These standard properties and stored in a static context in the `BuiltInProperties` class, for example:
-
-    var contentTypeFilter = new EqualitySearchFilter(BuiltInProperties.ContentType, "contentTypeId");
-	var createdAfterFilter = new DateTimeSearchFilter(BuiltInProperties.SysCreatedAt, DateTime.UtcNow.AddDays(-7), NumericEquality.GreaterThanEqual);
+```cs
+var contentTypeFilter = new EqualitySearchFilter(BuiltInProperties.ContentType, "contentTypeId");
+var createdAfterFilter = new DateTimeSearchFilter(BuiltInProperties.SysCreatedAt, DateTime.UtcNow.AddDays(-7), NumericEquality.GreaterThanEqual);
+```
 	
 ### Image Helper
 
 The Contentful service offers a way of resizing image assets stored within the Contentful CDN. These URLs can be generated using the `ImageHelper` static class, for example:
-
+```cs
 	var asset = await GetAsync<Asset>("assetId");
 	var thumbnailImage = ImageHelper.GetResizedImageUrl(
 	    asset.Details.File.Url, // Original URL
@@ -73,16 +77,38 @@ The Contentful service offers a way of resizing image assets stored within the C
 		ImageType.Jpg, // Image format
 		75 // (Optional) JPEG Compression Quality
     );
+```
 
 ### Examples
 
 **Get a single Entry by specifying its ID:**
-
+```cs
     var entry = await GetAsync<Entry>("entryId");
-
-**Get all Entries with Content Type "cat"**
-
+```
+**Search all Entries with Content Type "cat":**
+```cs
     var results = client.SearchAsync<Space>(cancellationToken, new[]
     {
-        new EqualitySearchFilter(BuiltInProperties.ContentType, "contentTypeId")
+        new EqualitySearchFilter(BuiltInProperties.ContentType, "cat")
     });
+```
+**Do a full-text search on all Entries with Content Type "cat":**
+```cs
+    var results = client.SearchAsync<Space>(cancellationToken, new ISearchFilter[]
+    {
+        new EqualitySearchFilter(BuiltInProperties.ContentType, "cat"),
+		new FullTextSearchFilter("manx")
+    });
+```
+**Search for all "cat" Entries updated since January 1st:**
+```cs
+    var results = client.SearchAsync<Space>(cancellationToken, new ISearchFilter[]
+    {
+        new EqualitySearchFilter(BuiltInProperties.ContentType, "cat"),
+		new DateTimeSearchFilter(BuiltInProperties.SysUpdatedAt, new DateTime(DateTime.Now.Year, 1, 1), NumericEquality.GreaterThanEqualTo),
+    });
+```
+### Kitchen Sink Demo
+
+The repository contains the `KitchenSink` project which is an ASP.NET MVC 5 web project which attempts to give a practical example of the API. It's
+somewhat complete, but it could use a little bit more work.

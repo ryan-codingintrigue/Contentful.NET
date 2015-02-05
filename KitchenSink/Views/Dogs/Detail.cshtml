@@ -1,0 +1,40 @@
+﻿@model KitchenSink.Models.Dogs.SingleDogItem
+
+@{
+    ViewBag.Title = "title";
+}
+
+<div class="detail">
+    <h2>@Model.Type</h2>
+
+    <ul>
+        <li>
+            <strong>Average Cost:</strong>
+            @string.Format("{0:C0}", Model.AverageCost)
+        </li>
+        <li>
+            <strong>Number Available:</strong>
+            @Model.NumberAvailable
+        </li>
+        <li>
+            <strong>Gender:</strong>
+            @(Model.IsMale ? "Male" : "Female")
+        </li>
+        <li>
+            <strong>Birthday:</strong>
+            @Model.Birthday.ToLongDateString()
+        </li>
+        @if (Model.Pictures != null)
+        {
+            <li>
+                <strong>Pictures:</strong>
+                @foreach (var picture in Model.Pictures)
+                {
+                    <a href="@picture.LargeImageUrl" target="_blank">
+                        <img src="@picture.ThumbnailImageUrl" alt=""/>
+                    </a>
+                }
+            </li>
+        }
+    </ul>
+</div>

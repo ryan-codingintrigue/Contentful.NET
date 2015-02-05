@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href="~/Content/master.css" rel="stylesheet"/>
+    <title>Kitchen Sink</title>
+</head>
+<body>
+<div class="body-wrapper">
+    <header>
+        <h1>Directory</h1>
+    </header>
+    <div class="search">
+        @using (Html.BeginForm("Search", "Dogs"))
+        {
+            <input placeholder="Search" id="criteria" name="criteria" />
+        }
+    </div>
+    <div class="main-content">
+        @RenderBody()
+    </div>
+    <footer>
+        
+    </footer>
+</div>
+</body>
+</html>

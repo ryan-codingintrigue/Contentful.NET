@@ -1,0 +1,38 @@
+﻿@model KitchenSink.Models.Dogs.All
+
+@{
+    ViewBag.Title = "All Dogs";
+}
+
+<div class="all">
+    @if (ViewBag.FromSearch as bool? == true)
+    {
+        <h2>Search Results</h2>
+        <p>
+            For: <strong>@ViewBag.Criteria</strong>
+        </p>
+    }
+    else
+    {
+        <h2>All Dogs</h2>
+    }
+    
+
+    <ul>
+        @foreach (var dog in Model.DogsItems)
+        {
+            <li>
+                <a href="@dog.LargeImageUrl" class="image">
+                    <img src="@dog.ThumbnailImageUrl" alt="Photo of a @dog.Type">
+                </a>
+                <div class="description">
+                    @dog.Type<br/>
+                    <a class="details" href="@Url.Action("Detail", new {id = dog.Id})">
+                        View Details
+                    </a>
+                </div>
+
+            </li>
+        }
+    </ul>
+</div>

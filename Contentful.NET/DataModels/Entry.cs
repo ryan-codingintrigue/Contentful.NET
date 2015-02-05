@@ -11,9 +11,9 @@ namespace Contentful.NET.DataModels
 
         private static readonly object Lock = new object();
 
-        public T GetEntry<T>()
+        public T GetType<T>(string propertyName)
         {
-            return GetJObject().ToObject<T>();
+            return CastPropertyValue<T>(propertyName);
         }
 
         public string GetString(string propertyName)
@@ -53,7 +53,7 @@ namespace Contentful.NET.DataModels
 
         private T CastPropertyValue<T>(string propertyName)
         {
-            return GetJObject()[propertyName].Value<T>();
+            return GetJObject()[propertyName].ToObject<T>();
         }
 
         private JObject GetJObject()

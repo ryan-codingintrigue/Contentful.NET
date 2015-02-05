@@ -1,0 +1,73 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.body-wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    background: #B8DFFF;
+}
+header h1 {
+    padding: 50px 0 50px 130px;
+    background: url('./images/logo.png') 20px 20px no-repeat;
+    color: #FFF;
+    margin: 0 0 20px;
+    background-color: rgba(0, 84, 153, 0.3);
+    font-weight: normal
+}
+.search input {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 1.4em;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #0061A3;
+    background: transparent
+}
+h2 {
+    margin: 10px 0;
+    font-weight: normal;
+}
+.main-content {
+    padding: 20px;
+}
+.main-content .all ul,
+.main-content .detail ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.main-content .all ul li {
+    height: auto;
+    overflow: hidden;
+}
+.main-content .all ul li .image {
+    float: left;
+}
+.main-content .all ul li .description {
+    font-size: 1.8em;
+    float: left;
+    padding: 0 20px;
+}
+.main-content .all ul li a {
+    font-size: 0.7em;
+    color: #0061A3;
+    text-decoration: none;
+}
+.main-content .all ul li a:hover {
+    text-decoration: underline;
+}
+
+.main-content .detail ul li strong {
+    display: inline-block;
+    width: 150px;
+    vertical-align: top;
+}
+.main-content .detail ul li a {
+    text-decoration: none;
+}
+.main-content .detail ul li a img {
+    border: 0;
+}

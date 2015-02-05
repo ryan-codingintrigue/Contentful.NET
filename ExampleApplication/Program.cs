@@ -13,7 +13,7 @@ namespace ExampleApplication
         {
             var client = new ContentfulClient("accessToken", "spaceId");
             var cancellationToken = new CancellationToken();
-            var entries = client.SearchAsync<Entry>(cancellationToken, new[]
+            var entries = client.SearchAsync<Space>(cancellationToken, new[]
             {
                 new EqualitySearchFilter(BuiltInProperties.SysId, "id")
             }).Result;
