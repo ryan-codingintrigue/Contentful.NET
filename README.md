@@ -69,44 +69,44 @@ var createdAfterFilter = new DateTimeSearchFilter(BuiltInProperties.SysCreatedAt
 
 The Contentful service offers a way of resizing image assets stored within the Contentful CDN. These URLs can be generated using the `ImageHelper` static class, for example:
 ```cs
-	var asset = await GetAsync<Asset>("assetId");
-	var thumbnailImage = ImageHelper.GetResizedImageUrl(
-	    asset.Details.File.Url, // Original URL
-	    150, // Maximum width constraint
-		100, // Maximum height constraint
-		ImageType.Jpg, // Image format
-		75 // (Optional) JPEG Compression Quality
-    );
+var asset = await GetAsync<Asset>("assetId");
+var thumbnailImage = ImageHelper.GetResizedImageUrl(
+    asset.Details.File.Url, // Original URL
+    150, // Maximum width constraint
+    100, // Maximum height constraint
+    ImageType.Jpg, // Image format
+    75 // (Optional) JPEG Compression Quality
+);
 ```
 
 ### Examples
 
 **Get a single Entry by specifying its ID:**
 ```cs
-    var entry = await GetAsync<Entry>("entryId");
+var entry = await GetAsync<Entry>("entryId");
 ```
 **Search all Entries with Content Type "cat":**
 ```cs
-    var results = client.SearchAsync<Space>(cancellationToken, new[]
-    {
-        new EqualitySearchFilter(BuiltInProperties.ContentType, "cat")
-    });
+var results = client.SearchAsync<Space>(cancellationToken, new[]
+{
+    new EqualitySearchFilter(BuiltInProperties.ContentType, "cat")
+});
 ```
 **Do a full-text search on all Entries with Content Type "cat":**
 ```cs
-    var results = client.SearchAsync<Space>(cancellationToken, new ISearchFilter[]
-    {
-        new EqualitySearchFilter(BuiltInProperties.ContentType, "cat"),
-		new FullTextSearchFilter("manx")
-    });
+var results = client.SearchAsync<Space>(cancellationToken, new ISearchFilter[]
+{
+    new EqualitySearchFilter(BuiltInProperties.ContentType, "cat"),
+    new FullTextSearchFilter("manx")
+});
 ```
 **Search for all "cat" Entries updated since January 1st:**
 ```cs
-    var results = client.SearchAsync<Space>(cancellationToken, new ISearchFilter[]
-    {
-        new EqualitySearchFilter(BuiltInProperties.ContentType, "cat"),
-		new DateTimeSearchFilter(BuiltInProperties.SysUpdatedAt, new DateTime(DateTime.Now.Year, 1, 1), NumericEquality.GreaterThanEqualTo),
-    });
+var results = client.SearchAsync<Space>(cancellationToken, new ISearchFilter[]
+{
+    new EqualitySearchFilter(BuiltInProperties.ContentType, "cat"),
+    new DateTimeSearchFilter(BuiltInProperties.SysUpdatedAt, new DateTime(DateTime.Now.Year, 1, 1), NumericEquality.GreaterThanEqualTo),
+});
 ```
 ### Kitchen Sink Demo
 
