@@ -1,5 +1,9 @@
 ﻿namespace Contentful.NET.Search
 {
+    /// <summary>
+    /// Type-safe-enum pattern which allows for mapping a string comparer value to a C# enum-style object
+    /// for ease of use in IntelliSense
+    /// </summary>
     internal sealed class SearchFilterComparer
     {
         private readonly string _value;

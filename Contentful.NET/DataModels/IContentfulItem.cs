@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Deployment.Internal;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Contentful.NET.DataModels
+﻿namespace Contentful.NET.DataModels
 {
+    /// <summary>
+    /// Contract for any data class which will be returned from the Contentful API
+    /// </summary>
     public interface IContentfulItem
     {
         

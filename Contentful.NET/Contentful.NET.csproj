@@ -58,12 +58,13 @@
   <ItemGroup>
     <Compile Include="ContentfulClient.cs" />
     <Compile Include="DataModels\AssetDetails.cs" />
+    <Compile Include="DataModels\ErrorResponse.cs" />
     <Compile Include="DataModels\Includes.cs" />
+    <Compile Include="Exceptions\ContentfulException.cs" />
     <Compile Include="RestEndpointResolver.cs" />
     <Compile Include="DataModels\Asset.cs" />
     <Compile Include="DataModels\ContentfulItemBase.cs" />
     <Compile Include="DataModels\ContentType.cs" />
-    <Compile Include="DataModels\ContentTypeField.cs" />
     <Compile Include="DataModels\Entry.cs" />
     <Compile Include="DataModels\File.cs" />
     <Compile Include="DataModels\IContentfulItem.cs" />

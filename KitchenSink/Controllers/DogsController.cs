@@ -106,7 +106,7 @@ namespace KitchenSink.Controllers
                 AverageCost = result.GetType<decimal>("averageCost"),
                 Birthday = result.GetDateTime("birthDate"),
                 Id = result.SystemProperties.Id,
-                IsMale = result.GetBoolean("isMale"),
+                IsMale = result.GetBoolean("isMale") == true,
                 NumberAvailable = result.GetType<int>("numberAvailable"),
                 // Get a thumbnail AND a large image for each picture
                 Pictures = allPictures == null ? null : allPictures

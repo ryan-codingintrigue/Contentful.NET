@@ -10,7 +10,7 @@ namespace KitchenSink.Models.Dogs
         public decimal AverageCost { get; set; }
         public int NumberAvailable { get; set; }
         public bool IsMale { get; set; }
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
         public IEnumerable<SingleDogItemPicture> Pictures { get; set; }
     }
 }
