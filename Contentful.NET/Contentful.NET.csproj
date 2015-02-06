@@ -60,6 +60,7 @@
     <Compile Include="DataModels\AssetDetails.cs" />
     <Compile Include="DataModels\ErrorResponse.cs" />
     <Compile Include="DataModels\Includes.cs" />
+    <Compile Include="DataModels\Location.cs" />
     <Compile Include="Exceptions\ContentfulException.cs" />
     <Compile Include="RestEndpointResolver.cs" />
     <Compile Include="DataModels\Asset.cs" />

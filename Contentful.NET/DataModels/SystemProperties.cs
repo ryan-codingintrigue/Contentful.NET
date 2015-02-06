@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace Contentful.NET.DataModels
 {
@@ -17,6 +18,10 @@ namespace Contentful.NET.DataModels
         /// </summary>
         public string LinkType { get; set; }
         /// <summary>
+        /// The type of this item
+        /// </summary>
+        public string Type { get; set; }
+        /// <summary>
         /// If applicable a link to the current space
         /// </summary>
         public Link Space { get; set; }
@@ -31,10 +36,16 @@ namespace Contentful.NET.DataModels
         /// <summary>
         /// The Date/Time this item was created
         /// </summary>
+        [JsonProperty("createdAt")]
         public DateTime? CreatedDateTime { get; set; }
         /// <summary>
         /// The Date/Time this item was last updated
         /// </summary>
+        [JsonProperty("updatedAt")]
         public DateTime? UpdatedDateTime { get; set; }
+        /// <summary>
+        /// The locale for this item
+        /// </summary>
+        public string Locale { get; set; }
     }
 }

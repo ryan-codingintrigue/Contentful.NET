@@ -99,6 +99,16 @@ namespace Contentful.NET.DataModels
             return CastPropertyValue<Entry>(propertyName);
         }
 
+        /// <summary>
+        /// Gets the details for a single <see cref="Location"/>
+        /// </summary>
+        /// <param name="propertyName">The name of the property to read from</param>
+        /// <returns>A new instance of the Location data class</returns>
+        public Location GetLocation(string propertyName)
+        {
+            return CastPropertyValue<Location>(propertyName);
+        }
+
         // Helper method to cast the value of a property on the JSON object
         // to type T
         private T CastPropertyValue<T>(string propertyName)
