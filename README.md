@@ -1,5 +1,7 @@
 # Contentful.NET
 
+[![Build Status](https://travis-ci.org/ryan-codingintrigue/Contentful.NET.svg)](https://travis-ci.org/ryan-codingintrigue/Contentful.NET)
+
 A .NET library wrapper for the Contentful [Content Delivery API](https://www.contentful.com/developers/documentation/content-delivery-api/).
 
 ## Project Goals & Contributions
