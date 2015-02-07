@@ -1,0 +1,8 @@
+language: csharp
+solution: Contentful.NET.sln
+install:
+  - nuget restore Contentful.Net.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release Contentful.NET.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Contentful.NET.Tests/bin/Release/Contentful.NET.Tests.dll
