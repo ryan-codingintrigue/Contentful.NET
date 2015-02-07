@@ -2,14 +2,14 @@
 using Contentful.NET.Search;
 using Contentful.NET.Search.Enums;
 using Contentful.NET.Search.Filters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests.Search.Filters
 {
-    [TestClass]
+    [TestFixture]
     public class InclusionSearchFilterTests
     {
-        [TestMethod]
+        [Test]
         public void TestCreatesInFilterByDefault()
         {
             const string propertyName = "prop";
@@ -20,7 +20,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(SearchFilterComparer.In.ToString(), filter.Comparison);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCreatesNotInFilter()
         {
             const string propertyName = "prop";
@@ -31,7 +31,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(SearchFilterComparer.NotIn.ToString(), filter.Comparison);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestThrowsExceptionOnInvalidPropertyName()
         {

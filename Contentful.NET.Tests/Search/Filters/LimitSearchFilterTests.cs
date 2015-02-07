@@ -1,14 +1,13 @@
 ﻿using System;
-using Contentful.NET.Search.Enums;
 using Contentful.NET.Search.Filters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests.Search.Filters
 {
-    [TestClass]
+    [TestFixture]
     public class LimitSearchFilterTests
     {
-        [TestMethod]
+        [Test]
         public void TestCanCreate()
         {
             var orderBy = new LimitSearchFilter(10);
@@ -17,7 +16,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual("10", orderBy.Value);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestThrowsExceptionOnInvalidLimit()
         {

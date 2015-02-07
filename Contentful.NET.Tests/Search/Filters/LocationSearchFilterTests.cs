@@ -1,14 +1,14 @@
 ﻿using System;
 using Contentful.NET.Search;
 using Contentful.NET.Search.Filters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests.Search.Filters
 {
-    [TestClass]
+    [TestFixture]
     public class LocationSearchFilterTests
     {
-        [TestMethod]
+        [Test]
         public void TestCreateLocationNearSearch()
         {
             const string propertyName = "query";
@@ -19,14 +19,14 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(SearchFilterComparer.LocationNear.ToString(), filter.Comparison);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestLocationNearThrowsExceptionOnInvalidPropertyName()
         {
             new LocationSearchFilter(null, 42.14m, 54.22m);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCreateLocationWithinSearch()
         {
             const string propertyName = "query";
@@ -37,14 +37,14 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(SearchFilterComparer.LocationWithin.ToString(), filter.Comparison);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestLocationWithinThrowsExceptionOnInvalidPropertyName()
         {
             new LocationSearchFilter("", 42.14m, 54.22m, 43.14m, 56.22m);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCreateLocationRadiusSearch()
         {
             const string propertyName = "query";
@@ -55,7 +55,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(SearchFilterComparer.LocationWithin.ToString(), filter.Comparison);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestLocationRadiusThrowsExceptionOnInvalidPropertyName()
         {

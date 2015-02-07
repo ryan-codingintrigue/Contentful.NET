@@ -1,13 +1,12 @@
-﻿using System;
-using Contentful.NET.DataModels;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Contentful.NET.DataModels;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests.DataModels
 {
-    [TestClass]
+    [TestFixture]
     public class SpaceTests
     {
-        [TestMethod]
+        [Test]
         public void TestCanSetName()
         {
             var space = new Space {Name = "test"};

@@ -1,12 +1,12 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ImageHelperTests
     {
-        [TestMethod]
+        [Test]
         public void TestReturnsBaseUrlWhenNoParametersPassed()
         {
             const string baseUrl = "http://image.contentful.com";
@@ -14,7 +14,7 @@ namespace Contentful.NET.Tests
             Assert.AreEqual(baseUrl, resized);
         }
 
-        [TestMethod]
+        [Test]
         public void TestReturnsSingleWidth()
         {
             const string baseUrl = "http://image.contentful.com";
@@ -22,7 +22,7 @@ namespace Contentful.NET.Tests
             Assert.AreEqual("http://image.contentful.com?w=150", resized);
         }
 
-        [TestMethod]
+        [Test]
         public void TestReturnsSingleHeight()
         {
             const string baseUrl = "http://image.contentful.com";
@@ -30,7 +30,7 @@ namespace Contentful.NET.Tests
             Assert.AreEqual("http://image.contentful.com?h=150", resized);
         }
 
-        [TestMethod]
+        [Test]
         public void TestReturnsWidthAndHeight()
         {
             const string baseUrl = "http://image.contentful.com";
@@ -38,7 +38,7 @@ namespace Contentful.NET.Tests
             Assert.AreEqual("http://image.contentful.com?w=200&h=100", resized);
         }
 
-        [TestMethod]
+        [Test]
         public void TestReturnsSingleJpg()
         {
             const string baseUrl = "http://image.contentful.com";
@@ -46,7 +46,7 @@ namespace Contentful.NET.Tests
             Assert.AreEqual("http://image.contentful.com?fm=jpg", resized);
         }
 
-        [TestMethod]
+        [Test]
         public void TestReturnsJpegWithCompression()
         {
             const string baseUrl = "http://image.contentful.com";
@@ -54,7 +54,7 @@ namespace Contentful.NET.Tests
             Assert.AreEqual("http://image.contentful.com?fm=jpg&q=90", resized);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestThrowsExceptionOnInvalidJpegCompression()
         {

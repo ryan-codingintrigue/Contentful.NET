@@ -1,14 +1,14 @@
 ﻿using System;
 using Contentful.NET.Search.Enums;
 using Contentful.NET.Search.Filters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests.Search.Filters
 {
-    [TestClass]
+    [TestFixture]
     public class OrderBySearchFilterTests
     {
-        [TestMethod]
+        [Test]
         public void TestCanCreateAscending()
         {
             const string propertyName = "test";
@@ -18,7 +18,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(propertyName, orderBy.Value);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCanCreateDescending()
         {
             const string propertyName = "test";
@@ -28,7 +28,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(propertyName, orderBy.Value);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestThrowsExceptionOnInvalidProperty()
         {

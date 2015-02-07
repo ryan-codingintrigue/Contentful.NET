@@ -1,13 +1,13 @@
 ﻿using Contentful.NET.Search;
 using Contentful.NET.Search.Filters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests.Search.Filters
 {
-    [TestClass]
+    [TestFixture]
     public class FullTextSearchFilterTests
     {
-        [TestMethod]
+        [Test]
         public void TestCreateAllFieldFilter()
         {
             const string propertyName = "query";
@@ -18,7 +18,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(SearchFilterComparer.Equal.ToString(), filter.Comparison);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCreateSpecificFieldFilter()
         {
             const string propertyName = "prop";

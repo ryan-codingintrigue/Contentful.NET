@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace Contentful.NET.Tests.Search
 {
-    [TestClass]
+    [TestFixture]
     public class SearchFilterComparerTests
     {
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
         }

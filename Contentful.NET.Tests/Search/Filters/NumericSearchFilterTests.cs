@@ -2,14 +2,14 @@
 using Contentful.NET.Search;
 using Contentful.NET.Search.Enums;
 using Contentful.NET.Search.Filters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests.Search.Filters
 {
-    [TestClass]
+    [TestFixture]
     public class NumericSearchFilterTests
     {
-        [TestMethod]
+        [Test]
         public void TestCreateLessThan()
         {
             const string propertyName = "prop";
@@ -20,7 +20,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(SearchFilterComparer.LessThan.ToString(), filter.Comparison);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCreateLessThanEqual()
         {
             const string propertyName = "prop";
@@ -31,7 +31,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(SearchFilterComparer.LessThanEqual.ToString(), filter.Comparison);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCreateGreaterThan()
         {
             const string propertyName = "prop";
@@ -42,7 +42,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(SearchFilterComparer.GreaterThan.ToString(), filter.Comparison);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCreateGreaterThanEqual()
         {
             const string propertyName = "prop";
@@ -53,7 +53,7 @@ namespace Contentful.NET.Tests.Search.Filters
             Assert.AreEqual(SearchFilterComparer.GreaterThanEqual.ToString(), filter.Comparison);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestThrowsExceptionOnInvalidPropertyName()
         {

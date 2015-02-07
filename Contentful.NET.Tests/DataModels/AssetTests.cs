@@ -1,13 +1,13 @@
 ﻿using System;
 using Contentful.NET.DataModels;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests.DataModels
 {
-    [TestClass]
+    [TestFixture]
     public class AssetTests
     {
-        [TestMethod]
+        [Test]
         public void TestCanSetDetails()
         {
             var assetDetails = new AssetDetails();

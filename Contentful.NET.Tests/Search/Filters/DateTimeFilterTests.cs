@@ -2,41 +2,41 @@
 using Contentful.NET.Search;
 using Contentful.NET.Search.Enums;
 using Contentful.NET.Search.Filters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests.Search.Filters
 {
-    [TestClass]
+    [TestFixture]
     public class DateTimeFilterTests
     {
         private const string ExpectedDate = "2012-02-01T00:30:21Z";
         private readonly DateTime _date = new DateTime(2012, 02, 01, 00, 30, 21, DateTimeKind.Utc);
 
-        [TestMethod]
+        [Test]
         public void TestCreateLessThan()
         {
             AssertEquality(NumericEquality.LessThan, SearchFilterComparer.LessThan);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCreateLessThanEqual()
         {
             AssertEquality(NumericEquality.LessThanEqualTo, SearchFilterComparer.LessThanEqual);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCreateGreaterThan()
         {
             AssertEquality(NumericEquality.GreaterThan, SearchFilterComparer.GreaterThan);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCreateGreaterThanEqual()
         {
             AssertEquality(NumericEquality.GreaterThanEqualTo, SearchFilterComparer.GreaterThanEqual);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestThrowsExceptionForInvalidProperty()
         {

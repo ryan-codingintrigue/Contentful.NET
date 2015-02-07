@@ -1,20 +1,19 @@
-﻿using System;
-using Contentful.NET.DataModels;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Contentful.NET.DataModels;
+using NUnit.Framework;
 
 namespace Contentful.NET.Tests.DataModels
 {
-    [TestClass]
+    [TestFixture]
     public class ContentTypeTests
     {
-        [TestMethod]
+        [Test]
         public void TestCanSetName()
         {
             var contentType = new ContentType {Name = "test"};
             Assert.AreEqual("test", contentType.Name);
         }
 
-        [TestMethod]
+        [Test]
         public void TestCanSetDescription()
         {
             var contentType = new ContentType {Description = "test description"};
