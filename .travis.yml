@@ -1,7 +1,7 @@
 language: csharp
 solution: Contentful.NET.sln
 install:
-  - nuget restore Contentful.Net.sln
+  - nuget restore Contentful.NET.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release Contentful.NET.sln
