@@ -64,9 +64,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DataModels\AssetTests.cs" />
+    <Compile Include="DataModels\ContentfulItemBaseTests.cs" />
+    <Compile Include="DataModels\ErrorResponseTests.cs" />
     <Compile Include="DataModels\SpaceTests.cs" />
     <Compile Include="DataModels\FileTests.cs" />
     <Compile Include="DataModels\ContentTypeTests.cs" />
+    <Compile Include="Exceptions\ContentfulExceptionTests.cs" />
     <Compile Include="ImageHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\Filters\EqualitySearchFilterTests.cs" />
