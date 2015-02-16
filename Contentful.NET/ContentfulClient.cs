@@ -37,9 +37,11 @@ namespace Contentful.NET
         /// <summary>
         /// Internal constructor for unit testing
         /// </summary>
+        /// <param name="space">The Space ID to query against</param>
         /// <param name="configuredHttpClient">The HTTP Client to use, must be preconfigured with Authorization header</param>
-        internal ContentfulClient(IHttpClientWrapper configuredHttpClient)
+        internal ContentfulClient(string space, IHttpClientWrapper configuredHttpClient)
         {
+            _space = space;
             HttpClient = configuredHttpClient;
         }
 

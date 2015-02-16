@@ -96,7 +96,6 @@
     <Compile Include="Search\Filters\InclusionSearchFilterTests.cs" />
     <Compile Include="Search\Filters\LimitSearchFilterTests.cs" />
     <Compile Include="Search\Filters\OrderBySearchFilterTests.cs" />
-    <Compile Include="Search\SearchFilterComparerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contentful.NET\Contentful.NET.csproj">

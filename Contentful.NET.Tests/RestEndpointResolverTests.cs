@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Contentful.NET.DataModels;
+﻿using Contentful.NET.DataModels;
 using NUnit.Framework;
 
 namespace Contentful.NET.Tests
