@@ -80,26 +80,6 @@ namespace Contentful.NET.DataModels
         }
 
         /// <summary>
-        /// Gets the details for a single <see cref="Asset"/>
-        /// </summary>
-        /// <param name="propertyName">The name of the property to read from</param>
-        /// <returns>A new instance of the Asset data class</returns>
-        public Asset GetLinkedAsset(string propertyName)
-        {
-            return CastPropertyValue<Asset>(propertyName);
-        }
-
-        /// <summary>
-        /// Gets the details for a single <see cref="Entry"/>
-        /// </summary>
-        /// <param name="propertyName">The name of the property to read from</param>
-        /// <returns>A new instance of the Entry data class</returns>
-        public Entry GetLinkedEntry(string propertyName)
-        {
-            return CastPropertyValue<Entry>(propertyName);
-        }
-
-        /// <summary>
         /// Gets the details for a single <see cref="Location"/>
         /// </summary>
         /// <param name="propertyName">The name of the property to read from</param>
@@ -122,7 +102,7 @@ namespace Contentful.NET.DataModels
             if (_jObject != null) return _jObject;
             lock (Lock)
             {
-                _jObject = new JObject(Fields);
+                _jObject = JObject.FromObject(Fields);
             }
             return _jObject;
         }

@@ -62,6 +62,8 @@
     <Compile Include="DataModels\Includes.cs" />
     <Compile Include="DataModels\Location.cs" />
     <Compile Include="Exceptions\ContentfulException.cs" />
+    <Compile Include="HttpClientWrapper.cs" />
+    <Compile Include="IHttpClientWrapper.cs" />
     <Compile Include="RestEndpointResolver.cs" />
     <Compile Include="DataModels\Asset.cs" />
     <Compile Include="DataModels\ContentfulItemBase.cs" />

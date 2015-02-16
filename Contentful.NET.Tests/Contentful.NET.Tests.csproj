@@ -41,6 +41,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -63,12 +70,20 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="ContentfulClientTests.cs" />
+    <Compile Include="DataModels\AssetDetailTests.cs" />
     <Compile Include="DataModels\AssetTests.cs" />
     <Compile Include="DataModels\ContentfulItemBaseTests.cs" />
+    <Compile Include="DataModels\EntryTests.cs" />
     <Compile Include="DataModels\ErrorResponseTests.cs" />
+    <Compile Include="DataModels\IncludeTests.cs" />
+    <Compile Include="DataModels\LocaleTests.cs" />
+    <Compile Include="DataModels\SearchResultTests.cs" />
     <Compile Include="DataModels\SpaceTests.cs" />
     <Compile Include="DataModels\FileTests.cs" />
     <Compile Include="DataModels\ContentTypeTests.cs" />
+    <Compile Include="DataModels\SystemPropertiesTests.cs" />
+    <Compile Include="RestEndpointResolverTests.cs" />
     <Compile Include="Exceptions\ContentfulExceptionTests.cs" />
     <Compile Include="ImageHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

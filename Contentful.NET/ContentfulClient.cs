@@ -20,7 +20,7 @@ namespace Contentful.NET
     public class ContentfulClient : IContentfulClient
     {
         private readonly string _space;
-        private readonly HttpClient _httpClient;
+        internal readonly IHttpClientWrapper HttpClient;
 
         /// <summary>
         /// Creates a new instance of the Contentful Client API
@@ -31,16 +31,16 @@ namespace Contentful.NET
         {
             _space = space;
             if(string.IsNullOrEmpty(accessToken)) throw new ArgumentException("Access Token cannot be null or empty", "accessToken");
-            _httpClient = BuildHttpClient(accessToken);
+            HttpClient = BuildHttpClient(accessToken);
         }
 
         /// <summary>
         /// Internal constructor for unit testing
         /// </summary>
         /// <param name="configuredHttpClient">The HTTP Client to use, must be preconfigured with Authorization header</param>
-        internal ContentfulClient(HttpClient configuredHttpClient)
+        internal ContentfulClient(IHttpClientWrapper configuredHttpClient)
         {
-            _httpClient = configuredHttpClient;
+            HttpClient = configuredHttpClient;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Contentful.NET
         /// <exception cref="ContentfulException">Thrown if the request to Contentful returned a status code other than 200 (OK)</exception>
         internal async Task<HttpResponseMessage> MakeGetRequestAsync(string url, CancellationToken cancellationToken)
         {
-            var result = await _httpClient.GetAsync(url, cancellationToken);
+            var result = await HttpClient.GetAsync(url, cancellationToken);
             if (result.IsSuccessStatusCode) return result;
             throw new ContentfulException((int)result.StatusCode, await result.Content.ReadAsStringAsync());
         }
@@ -151,11 +151,11 @@ namespace Contentful.NET
         /// </summary>
         /// <param name="accessToken">The access token for the required space</param>
         /// <returns>A new instance of HttpClient</returns>
-        internal static HttpClient BuildHttpClient(string accessToken)
+        internal static IHttpClientWrapper BuildHttpClient(string accessToken)
         {
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("Authorization", string.Format("Bearer {0}", accessToken));
-            return httpClient;
+            return new HttpClientWrapper(httpClient);
         }
 
         /// <summary>

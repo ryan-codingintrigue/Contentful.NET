@@ -19,7 +19,7 @@ namespace Contentful.NET
             { typeof(Asset), "/assets/"},
             { typeof(ContentType), "/content_types/"},
             { typeof(Entry), "/entries/"},
-            { typeof(Space), "/spaces/"}
+            { typeof(Space), ""}
         };
 
         /// <summary>
