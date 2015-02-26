@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Contentful.NET.DataModels;
 using Contentful.NET.Exceptions;
 using Contentful.NET.Search;
 using Contentful.NET.Search.Enums;
@@ -38,11 +40,13 @@ namespace Contentful.NET.Tests
 
             var mockHttpClient = new Mock<IHttpClientWrapper>();
             mockHttpClient.Setup(h => h.GetAsync(requestUri, cancellationToken))
-                .ReturnsAsync(new HttpResponseMessage(HttpStatusCode.BadRequest));
+                .ReturnsAsync(new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent("")
+                });
 
-            var client = new ContentfulClient(mockHttpClient.Object);
-            var result = await client.MakeGetRequestAsync(requestUri, cancellationToken);
-            Assert.IsNotNull(result);
+            var client = new ContentfulClient("spaceId", mockHttpClient.Object);
+            await client.MakeGetRequestAsync(requestUri, cancellationToken);
         }
 
         [Test]
@@ -165,6 +169,51 @@ namespace Contentful.NET.Tests
         {
             var result = ContentfulClient.GetRequestUrl(RequestBaseUrl, includeLevels: 6);
             Assert.AreEqual("http://test.com/?include=6", result);
+        }
+
+        [Test]
+        public async Task TestCanGetEntryAsync()
+        {
+            const string endpointUrl = "https://cdn.contentful.com/spaces/spaceId/entries/123456";
+            var cancellationToken = new CancellationToken();
+            var mockHttpWrapper = new Mock<IHttpClientWrapper>();
+            mockHttpWrapper.Setup(m => m.GetAsync(endpointUrl, cancellationToken))
+                .ReturnsAsync(new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent("{ sys: { \"id\": \"123456\" } }")
+                });
+            var client = new ContentfulClient("spaceId", mockHttpWrapper.Object);
+            var entry = await client.GetAsync<Entry>(cancellationToken, "123456");
+            Assert.IsNotNull(entry);
+            Assert.AreEqual("123456", entry.SystemProperties.Id);
+        }
+
+        [Test]
+        public async Task TestCanSearchAssetsAsync()
+        {
+            const string endpointUrl = "https://cdn.contentful.com/spaces/spaceId/assets/?skip=0&limit=10",
+                assetId = "123456789";
+            const int skip = 0,
+                limit = 10;
+            var cancellationToken = new CancellationToken();
+            var mockHttpWrapper = new Mock<IHttpClientWrapper>();
+            mockHttpWrapper.Setup(m => m.GetAsync(endpointUrl, cancellationToken))
+                .ReturnsAsync(new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent("{ skip: 0, limit: 10, items: [ { sys: { \"id\": \"123456789\" } } ] }")
+                });
+            var client = new ContentfulClient("spaceId", mockHttpWrapper.Object);
+            var results = await client.SearchAsync<Asset>(cancellationToken, new ISearchFilter[]
+            {
+                new SkipSearchFilter(skip), 
+                new LimitSearchFilter(limit)
+            });
+            Assert.IsNotNull(results);
+            Assert.AreEqual(skip, results.Skip);
+            Assert.AreEqual(limit, results.Limit);
+            Assert.IsTrue(results.Items.Any());
+            var asset = results.Items.First();
+            Assert.AreEqual(assetId, asset.SystemProperties.Id);
         }
 
         private class MockJsonModel

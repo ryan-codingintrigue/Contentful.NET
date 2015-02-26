@@ -20,10 +20,13 @@
             <strong>Gender:</strong>
             @(Model.IsMale ? "Male" : "Female")
         </li>
-        <li>
-            <strong>Birthday:</strong>
-            @Model.Birthday.ToLongDateString()
-        </li>
+        @if (Model.Birthday.HasValue)
+        {
+            <li>
+                <strong>Birthday:</strong>
+                @Model.Birthday.Value.ToLongDateString()
+            </li>
+        }
         @if (Model.Pictures != null)
         {
             <li>
