@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22310.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contentful.NET", "Contentful.NET\Contentful.NET.csproj", "{36DCCD00-3752-447C-A62E-2B5BFD88B438}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contentful.NET.PCL", "Contentful.NET.PCL\Contentful.NET.PCL.csproj", "{36DCCD00-3752-447C-A62E-2B5BFD88B438}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E1E0E1C4-5F20-4F20-A4EC-FE08537B161E}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contentful.NET.Tests", "Contentful.NET.Tests\Contentful.NET.Tests.csproj", "{9D559AF3-4278-4C85-8D3A-DBCD00BB9C3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenSink", "KitchenSink\KitchenSink.csproj", "{B3CEA502-1B76-470C-AA01-E781D8A08FAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contentful.NET", "Contentful.NET\Contentful.NET.csproj", "{9E3DA13C-5E34-4B8D-93DE-8DB1F8FDC2CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B3CEA502-1B76-470C-AA01-E781D8A08FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3CEA502-1B76-470C-AA01-E781D8A08FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3CEA502-1B76-470C-AA01-E781D8A08FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E3DA13C-5E34-4B8D-93DE-8DB1F8FDC2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3DA13C-5E34-4B8D-93DE-8DB1F8FDC2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E3DA13C-5E34-4B8D-93DE-8DB1F8FDC2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3DA13C-5E34-4B8D-93DE-8DB1F8FDC2CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

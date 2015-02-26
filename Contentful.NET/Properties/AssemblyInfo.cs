@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Contentful.NET")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Texthelp Systems")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Contentful.NET")]
-[assembly: AssemblyCopyright("Copyright © Texthelp Systems 2015")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -18,6 +18,9 @@ using System.Runtime.InteropServices;
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("9e3da13c-5e34-4b8d-93de-8db1f8fdc2cf")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -31,7 +34,3 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-// Expose internals to tests
-[assembly: InternalsVisibleTo("Contentful.NET.Tests")]
-// Expose internals to Moq
-[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
