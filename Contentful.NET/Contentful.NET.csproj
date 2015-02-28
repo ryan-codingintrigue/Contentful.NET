@@ -38,12 +38,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Extensions">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Primitives">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,121 +46,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Contentful.NET.PCL\ContentfulClient.cs">
-      <Link>ContentfulClient.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\Asset.cs">
-      <Link>DataModels\Asset.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\AssetDetails.cs">
-      <Link>DataModels\AssetDetails.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\ContentfulItemBase.cs">
-      <Link>DataModels\ContentfulItemBase.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\ContentType.cs">
-      <Link>DataModels\ContentType.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\Entry.cs">
-      <Link>DataModels\Entry.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\ErrorResponse.cs">
-      <Link>DataModels\ErrorResponse.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\File.cs">
-      <Link>DataModels\File.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\IContentfulItem.cs">
-      <Link>DataModels\IContentfulItem.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\Includes.cs">
-      <Link>DataModels\Includes.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\Link.cs">
-      <Link>DataModels\Link.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\Locale.cs">
-      <Link>DataModels\Locale.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\Location.cs">
-      <Link>DataModels\Location.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\SearchResult.cs">
-      <Link>DataModels\SearchResult.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\Space.cs">
-      <Link>DataModels\Space.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\DataModels\SystemProperties.cs">
-      <Link>DataModels\SystemProperties.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Exceptions\ContentfulException.cs">
-      <Link>Exceptions\ContentfulException.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\HttpClientWrapper.cs">
-      <Link>HttpClientWrapper.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\IContentfulClient.cs">
-      <Link>IContentfulClient.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\IHttpClientWrapper.cs">
-      <Link>IHttpClientWrapper.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\ImageHelper.cs">
-      <Link>ImageHelper.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\RestEndpointResolver.cs">
-      <Link>RestEndpointResolver.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\BuiltInProperties.cs">
-      <Link>Search\BuiltInProperties.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Enums\Equality.cs">
-      <Link>Search\Enums\Equality.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Enums\InEquality.cs">
-      <Link>Search\Enums\InEquality.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Enums\NumericEquality.cs">
-      <Link>Search\Enums\NumericEquality.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Enums\OrderBy.cs">
-      <Link>Search\Enums\OrderBy.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Filters\DateTimeSearchFilter.cs">
-      <Link>Search\Filters\DateTimeSearchFilter.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Filters\EqualitySearchFilter.cs">
-      <Link>Search\Filters\EqualitySearchFilter.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Filters\FullTextSearchFilter.cs">
-      <Link>Search\Filters\FullTextSearchFilter.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Filters\InclusionSearchFilter.cs">
-      <Link>Search\Filters\InclusionSearchFilter.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Filters\LimitSearchFilter.cs">
-      <Link>Search\Filters\LimitSearchFilter.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Filters\LocationSearchFilter.cs">
-      <Link>Search\Filters\LocationSearchFilter.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Filters\NumericSearchFilter.cs">
-      <Link>Search\Filters\NumericSearchFilter.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Filters\OrderBySearchFilter.cs">
-      <Link>Search\Filters\OrderBySearchFilter.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\Filters\SkipSearchFilter.cs">
-      <Link>Search\Filters\SkipSearchFilter.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\ISearchFilter.cs">
-      <Link>Search\ISearchFilter.cs</Link>
-    </Compile>
-    <Compile Include="..\Contentful.NET.PCL\Search\SearchFilterComparer.cs">
-      <Link>Search\SearchFilterComparer.cs</Link>
-    </Compile>
+    <Compile Include="ContentfulClient.cs" />
+    <Compile Include="DataModels\Asset.cs" />
+    <Compile Include="DataModels\AssetDetails.cs" />
+    <Compile Include="DataModels\ContentfulItemBase.cs" />
+    <Compile Include="DataModels\ContentType.cs" />
+    <Compile Include="DataModels\Entry.cs" />
+    <Compile Include="DataModels\ErrorResponse.cs" />
+    <Compile Include="DataModels\File.cs" />
+    <Compile Include="DataModels\IContentfulItem.cs" />
+    <Compile Include="DataModels\Includes.cs" />
+    <Compile Include="DataModels\Link.cs" />
+    <Compile Include="DataModels\Locale.cs" />
+    <Compile Include="DataModels\Location.cs" />
+    <Compile Include="DataModels\SearchResult.cs" />
+    <Compile Include="DataModels\Space.cs" />
+    <Compile Include="DataModels\SystemProperties.cs" />
+    <Compile Include="Exceptions\ContentfulException.cs" />
+    <Compile Include="HttpClientWrapper.cs" />
+    <Compile Include="IContentfulClient.cs" />
+    <Compile Include="IHttpClientWrapper.cs" />
+    <Compile Include="ImageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestEndpointResolver.cs" />
+    <Compile Include="Search\BuiltInProperties.cs" />
+    <Compile Include="Search\Enums\Equality.cs" />
+    <Compile Include="Search\Enums\InEquality.cs" />
+    <Compile Include="Search\Enums\NumericEquality.cs" />
+    <Compile Include="Search\Enums\OrderBy.cs" />
+    <Compile Include="Search\Filters\DateTimeSearchFilter.cs" />
+    <Compile Include="Search\Filters\EqualitySearchFilter.cs" />
+    <Compile Include="Search\Filters\FullTextSearchFilter.cs" />
+    <Compile Include="Search\Filters\InclusionSearchFilter.cs" />
+    <Compile Include="Search\Filters\LimitSearchFilter.cs" />
+    <Compile Include="Search\Filters\LocationSearchFilter.cs" />
+    <Compile Include="Search\Filters\NumericSearchFilter.cs" />
+    <Compile Include="Search\Filters\OrderBySearchFilter.cs" />
+    <Compile Include="Search\Filters\SkipSearchFilter.cs" />
+    <Compile Include="Search\ISearchFilter.cs" />
+    <Compile Include="Search\SearchFilterComparer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -178,11 +96,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
-  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
-  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
-    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
-    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
