@@ -93,7 +93,11 @@ namespace Contentful.NET.DataModels
         // to type T
         private T CastPropertyValue<T>(string propertyName)
         {
-            return GetJObject()[propertyName].ToObject<T>();
+            var obj = GetJObject();
+            JToken token;
+            return obj.TryGetValue(propertyName, StringComparison.OrdinalIgnoreCase, out token)
+                ? token.ToObject<T>()
+                : default(T);
         }
 
         // Lazy implementation of the fields JObject. Only deserialized on first usage
