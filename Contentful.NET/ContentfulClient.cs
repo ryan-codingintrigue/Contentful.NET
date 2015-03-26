@@ -19,6 +19,7 @@ namespace Contentful.NET
     /// </summary>
     public class ContentfulClient : IContentfulClient
     {
+		private readonly bool _preview;
         private readonly string _space;
         internal readonly IHttpClientWrapper HttpClient;
 
@@ -27,8 +28,10 @@ namespace Contentful.NET
         /// </summary>
         /// <param name="accessToken">The access token for the provided space</param>
         /// <param name="space">The Space ID to query against</param>
-        public ContentfulClient(string accessToken, string space)
+		/// /// <param name="preview">Whether to use the preview API, false by default</param>
+		public ContentfulClient(string accessToken, string space, bool preview = false)
         {
+			_preview = preview;
             _space = space;
             if(string.IsNullOrEmpty(accessToken)) throw new ArgumentException("Access Token cannot be null or empty", "accessToken");
             HttpClient = BuildHttpClient(accessToken);
@@ -55,7 +58,7 @@ namespace Contentful.NET
         /// <exception cref="ContentfulException">Thrown if the request to Contentful returned a status code other than 200 (OK)</exception>
         public async Task<T> GetAsync<T>(CancellationToken cancellationToken, string id) where T : IContentfulItem, new()
         {
-            var endpointUrl = RestEndpointResolver.GetEndpointUrl<T>(_space);
+			var endpointUrl = RestEndpointResolver.GetEndpointUrl<T>(_space, _preview);
             var requestUrl = GetRequestUrl(endpointUrl, id);
             var result = await MakeGetRequestAsync(requestUrl, cancellationToken);
             return await GetItemAsync<T>(result);
@@ -76,7 +79,7 @@ namespace Contentful.NET
         /// <exception cref="ContentfulException">Thrown if the request to Contentful returned a status code other than 200 (OK)</exception>
         public async Task<SearchResult<T>> SearchAsync<T>(CancellationToken cancellationToken, IEnumerable<ISearchFilter> searchFilters = null, string orderByProperty = null, OrderByDirection? orderByDirection = null, int? skip = null, int? limit = null, int? includeLevels = null) where T : IContentfulItem, new()
         {
-            var endpointUrl = RestEndpointResolver.GetEndpointUrl<T>(_space);
+            var endpointUrl = RestEndpointResolver.GetEndpointUrl<T>(_space, _preview);
             var requestUrl = GetRequestUrl(endpointUrl, null, searchFilters, orderByProperty, orderByDirection, skip, limit);
             var result = await MakeGetRequestAsync(requestUrl, cancellationToken);
             return await GetItemAsync<SearchResult<T>>(result);

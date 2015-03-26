@@ -37,5 +37,13 @@ namespace Contentful.NET.Tests
             const string expectedEndpoint = "https://cdn.contentful.com/spaces/spaceId";
             Assert.AreEqual(expectedEndpoint, endpoint);
         }
+
+		[Test]
+		public void CanGetSpaceEndpointForPreview()
+		{
+			var endpoint = RestEndpointResolver.GetEndpointUrl<Space>("spaceId", true);
+			const string expectedEndpoint = "https://preview.contentful.com/spaces/spaceId";
+			Assert.AreEqual(expectedEndpoint, endpoint);
+		}
     }
 }
