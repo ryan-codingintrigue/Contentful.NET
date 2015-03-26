@@ -24,6 +24,13 @@ namespace Contentful.NET.Tests
             Assert.IsNotNull(client.HttpClient);
         }
 
+		[Test]
+		public void TestPublicConstructorAcceptsOptionalPreviewParameter()
+		{
+			var client = new ContentfulClient("accessToken", "space", true);
+			Assert.IsNotNull(client.HttpClient);
+		}
+
         [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void TestPublicConstructorThrowsArgumentExceptionWhenAccessTokenIsMissing()
