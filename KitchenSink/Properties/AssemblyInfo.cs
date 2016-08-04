@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("KitchenSink")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Texthelp Systems")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("KitchenSink")]
-[assembly: AssemblyCopyright("Copyright © Texthelp Systems 2015")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
