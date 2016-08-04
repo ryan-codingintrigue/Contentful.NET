@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Contentful.NET")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Texthelp Systems")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Contentful.NET")]
-[assembly: AssemblyCopyright("Copyright © Texthelp Systems 2015")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
