@@ -18,7 +18,7 @@
         internal static readonly SearchFilterComparer GreaterThanEqual = new SearchFilterComparer("\\[gte\\]=");
         internal static readonly SearchFilterComparer LocationNear = new SearchFilterComparer("[near]=");
         internal static readonly SearchFilterComparer LocationWithin = new SearchFilterComparer("[within]=");
-        internal static readonly SearchFilterComparer FullText = new SearchFilterComparer("\\[match\\]=");
+        internal static readonly SearchFilterComparer FullText = new SearchFilterComparer("[match]=");
 
         private SearchFilterComparer(string value)
         {
