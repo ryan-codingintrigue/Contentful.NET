@@ -188,3 +188,5 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 Contentful.NET.Core/.vscode/
+Contentful.NET.Core/project.lock.json
+Contentful.NET.Core/Contentful.NET.Core.sln
