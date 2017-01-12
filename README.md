@@ -1,3 +1,12 @@
+# Project Deprecated
+
+The guys over at Contentful have now released an official version of the API! Grab it over at the new GitHub page:
+https://github.com/contentful/contentful.net
+
+<br>
+<br>
+<br>
+
 # Contentful.NET
 
 [![Build status](https://ci.appveyor.com/api/projects/status/vvgdd96miyl217nv?svg=true)](https://ci.appveyor.com/project/ryan-codingintrigue/contentful-net)
