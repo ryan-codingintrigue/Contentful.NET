@@ -80,7 +80,7 @@ namespace Contentful.NET
         public async Task<SearchResult<T>> SearchAsync<T>(CancellationToken cancellationToken, IEnumerable<ISearchFilter> searchFilters = null, string orderByProperty = null, OrderByDirection? orderByDirection = null, int? skip = null, int? limit = null, int? includeLevels = null) where T : IContentfulItem, new()
         {
             var endpointUrl = RestEndpointResolver.GetEndpointUrl<T>(_space, _preview);
-            var requestUrl = GetRequestUrl(endpointUrl, null, searchFilters, orderByProperty, orderByDirection, skip, limit);
+            var requestUrl = GetRequestUrl(endpointUrl, null, searchFilters, orderByProperty, orderByDirection, skip, limit, includeLevels);
             var result = await MakeGetRequestAsync(requestUrl, cancellationToken);
             return await GetItemAsync<SearchResult<T>>(result);
         }
