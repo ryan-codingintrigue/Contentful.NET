@@ -36,7 +36,8 @@ namespace KitchenSink
             unityContainer.RegisterType<IContentfulClient, ContentfulClient>(
                 new InjectionConstructor(
                     ConfigurationManager.AppSettings["ContentfulAccessToken"], // Access Token
-                    ConfigurationManager.AppSettings["ContentfulSpaceId"] // Space Id
+                    ConfigurationManager.AppSettings["ContentfulSpaceId"], // Space Id
+                    false // Use Preview
                 )
             );
         }
