@@ -10,7 +10,8 @@ namespace Contentful.NET.Tests
         public void CanGetAssetEndpoint()
         {
             var endpoint = RestEndpointResolver.GetEndpointUrl<Asset>("spaceId");
-            const string expectedEndpoint = "https://cdn.contentful.com/spaces/spaceId/assets/";
+            const string expectedEndpoint = "https://cdn-legacy.contentful.com/spaces/spaceId/assets/";
+            
             Assert.AreEqual(expectedEndpoint, endpoint);
         }
 
@@ -18,7 +19,7 @@ namespace Contentful.NET.Tests
         public void CanGetContentTypeEndpoint()
         {
             var endpoint = RestEndpointResolver.GetEndpointUrl<ContentType>("spaceId");
-            const string expectedEndpoint = "https://cdn.contentful.com/spaces/spaceId/content_types/";
+            const string expectedEndpoint = "https://cdn-legacy.contentful.com/spaces/spaceId/content_types/";
             Assert.AreEqual(expectedEndpoint, endpoint);
         }
 
@@ -26,7 +27,7 @@ namespace Contentful.NET.Tests
         public void CanGetEntryEndpoint()
         {
             var endpoint = RestEndpointResolver.GetEndpointUrl<Entry>("spaceId");
-            const string expectedEndpoint = "https://cdn.contentful.com/spaces/spaceId/entries/";
+            const string expectedEndpoint = "https://cdn-legacy.contentful.com/spaces/spaceId/entries/";
             Assert.AreEqual(expectedEndpoint, endpoint);
         }
 
@@ -34,7 +35,7 @@ namespace Contentful.NET.Tests
         public void CanGetSpaceEndpoint()
         {
             var endpoint = RestEndpointResolver.GetEndpointUrl<Space>("spaceId");
-            const string expectedEndpoint = "https://cdn.contentful.com/spaces/spaceId";
+            const string expectedEndpoint = "https://cdn-legacy.contentful.com/spaces/spaceId";
             Assert.AreEqual(expectedEndpoint, endpoint);
         }
 

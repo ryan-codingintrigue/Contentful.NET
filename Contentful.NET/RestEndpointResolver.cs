@@ -10,12 +10,13 @@ namespace Contentful.NET
     /// </summary>
     internal static class RestEndpointResolver
     {
-		private const string ContentfulProductionHost = "cdn";
-		private const string ContentfulPreviewHost = "preview";
+        // private const string ContentfulProductionHost = "cdn";
+        private const string ContentfulProductionHost = "cdn-legacy";
+        private const string ContentfulPreviewHost = "preview";
 
         // Base formatted URL to the Contentful CDN
 		private const string ContentfulApiBase = "https://{0}.contentful.com/spaces/{1}";
-
+ 
         // Hardcoded mapping of IContentItems which have a corresponding endpoint URL
         private static readonly Dictionary<Type, string> EndpointDictionary = new Dictionary<Type, string>
         {
