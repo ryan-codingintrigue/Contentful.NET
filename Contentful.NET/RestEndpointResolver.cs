@@ -10,8 +10,8 @@ namespace Contentful.NET
     /// </summary>
     public static class RestEndpointResolver
     {
-        // private const string ContentfulProductionHost = "cdn";
-        private const string ContentfulProductionHost = "cdn-legacy";
+        private const string ContentfulProductionHost = "cdn";
+        //private const string ContentfulProductionHost = "cdn-legacy";
         private const string ContentfulPreviewHost = "preview";
 
         // Base formatted URL to the Contentful CDN

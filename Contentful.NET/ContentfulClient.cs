@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -42,7 +43,7 @@ namespace Contentful.NET
         /// </summary>
         /// <param name="space">The Space ID to query against</param>
         /// <param name="configuredHttpClient">The HTTP Client to use, must be preconfigured with Authorization header</param>
-        internal ContentfulClient(string space, IHttpClientWrapper configuredHttpClient)
+        public ContentfulClient(string space, IHttpClientWrapper configuredHttpClient)
         {
             _space = space;
             HttpClient = configuredHttpClient;
@@ -92,7 +93,7 @@ namespace Contentful.NET
         /// <param name="cancellationToken">The cancellation token for the request</param>
         /// <returns>A HttpResponseMessage with the success status code & content</returns>
         /// <exception cref="ContentfulException">Thrown if the request to Contentful returned a status code other than 200 (OK)</exception>
-        internal async Task<HttpResponseMessage> MakeGetRequestAsync(string url, CancellationToken cancellationToken)
+        public async Task<HttpResponseMessage> MakeGetRequestAsync(string url, CancellationToken cancellationToken)
         {
             var result = await HttpClient.GetAsync(url, cancellationToken);
             if (result.IsSuccessStatusCode) return result;
@@ -111,7 +112,7 @@ namespace Contentful.NET
         /// <param name="limit">(Optional) The number of content entries to take</param>
         /// <param name="includeLevels">(Optional) The number of levels of includes which should be requested</param>
         /// <returns>An absolute URL to the Contentful service with the parameters passed through as a query string</returns>
-        internal static string GetRequestUrl(string baseUri, string id = null, IEnumerable<ISearchFilter> filters = null, string orderByProperty = null, OrderByDirection? orderByDirection = null, int? skip = null, int? limit = null, int? includeLevels = null)
+        public static string GetRequestUrl(string baseUri, string id = null, IEnumerable<ISearchFilter> filters = null, string orderByProperty = null, OrderByDirection? orderByDirection = null, int? skip = null, int? limit = null, int? includeLevels = null)
         {
             if (AreAllNull(id, filters, orderByProperty, skip, limit, includeLevels)) return baseUri;
             var mergedFilters = filters != null ? filters.ToList() : new List<ISearchFilter>();
@@ -131,7 +132,7 @@ namespace Contentful.NET
         /// </summary>
         /// <param name="properties">A list of properties to check</param>
         /// <returns>True if all properties are null, otherwise false</returns>
-        internal static bool AreAllNull(params object[] properties)
+        public static bool AreAllNull(params object[] properties)
         {
             return properties.All(p => p == null);
         }
@@ -141,7 +142,7 @@ namespace Contentful.NET
         /// </summary>
         /// <param name="filters">The search filters to use for the query string</param>
         /// <returns>A string literal containing the key/value pairs for a query string</returns>
-        internal static string GetQueryStringFromSearchFilters(IEnumerable<ISearchFilter> filters)
+        public static string GetQueryStringFromSearchFilters(IEnumerable<ISearchFilter> filters)
         {
             if (filters == null) return null;
             return string.Join("&",
@@ -156,9 +157,10 @@ namespace Contentful.NET
         /// </summary>
         /// <param name="accessToken">The access token for the required space</param>
         /// <returns>A new instance of HttpClient</returns>
-        internal static IHttpClientWrapper BuildHttpClient(string accessToken)
+        public static IHttpClientWrapper BuildHttpClient(string accessToken)
         {
             var httpClient = new HttpClient();
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
             httpClient.DefaultRequestHeaders.Add("Authorization", string.Format("Bearer {0}", accessToken));
             return new HttpClientWrapper(httpClient);
         }
@@ -169,7 +171,7 @@ namespace Contentful.NET
         /// <typeparam name="T">The type to serialize the JSON to</typeparam>
         /// <param name="responseMessage">The HttpResponseMessage returned from the Contentful API</param>
         /// <returns>A new instance of class T, populated with the data from the JSON</returns>
-        internal static async Task<T> GetItemAsync<T>(HttpResponseMessage responseMessage)
+        public static async Task<T> GetItemAsync<T>(HttpResponseMessage responseMessage)
         {
             using (var streamReader = new StreamReader(await responseMessage.Content.ReadAsStreamAsync()))
             using (var jsonTextReader = new JsonTextReader(streamReader))
