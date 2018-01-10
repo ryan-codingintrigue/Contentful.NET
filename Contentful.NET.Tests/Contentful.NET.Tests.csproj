@@ -101,12 +101,11 @@
     <Compile Include="Search\Filters\OrderBySearchFilterTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contentful.NET.PCL\Contentful.NET.PCL.csproj">
-      <Project>{36dccd00-3752-447c-a62e-2b5bfd88b438}</Project>
-      <Name>Contentful.NET.PCL</Name>
+    <ProjectReference Include="..\Contentful.NET\Contentful.NET.csproj">
+      <Project>{9E3DA13C-5E34-4B8D-93DE-8DB1F8FDC2CF}</Project>
+      <Name>Contentful.NET</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

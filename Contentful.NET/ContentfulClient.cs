@@ -21,7 +21,7 @@ namespace Contentful.NET
     {
 		private readonly bool _preview;
         private readonly string _space;
-        internal readonly IHttpClientWrapper HttpClient;
+        public readonly IHttpClientWrapper HttpClient;
 
         /// <summary>
         /// Creates a new instance of the Contentful Client API

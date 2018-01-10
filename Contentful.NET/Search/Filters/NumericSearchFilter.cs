@@ -30,7 +30,7 @@ namespace Contentful.NET.Search.Filters
         /// <param name="propertyName">The name of the Content property to test against</param>
         /// <param name="equalityValue">The decimal value to compare against</param>
         /// <param name="equality">The equality operator to use for comparison</param>
-        /// <exception cref="ArgumentException">Thrown if the provided propertyName is invalid</exception>
+        /// <exception cref="System.ArgumentException">Thrown if the provided propertyName is invalid</exception>
         public NumericSearchFilter(string propertyName, decimal equalityValue, NumericEquality equality)
         {
             if (string.IsNullOrEmpty(propertyName)) throw new ArgumentException("Property Name must be specified");

@@ -8,7 +8,7 @@ namespace Contentful.NET
     /// Internal class which handles resolving the URLs to the Contentful REST endpoints for 
     /// each individual ContentItem type
     /// </summary>
-    internal static class RestEndpointResolver
+    public static class RestEndpointResolver
     {
         // private const string ContentfulProductionHost = "cdn";
         private const string ContentfulProductionHost = "cdn-legacy";
@@ -33,7 +33,7 @@ namespace Contentful.NET
         /// <param name="space">The ID of the Space used to generate the endpoint URL</param>
 		/// <param name="preview">Whether to use the preview API, false by default</param>
         /// <returns>A generated URL to the REST Endpoint represented by T</returns>
-		internal static string GetEndpointUrl<T>(string space, bool preview = false) where T : IContentfulItem
+		public static string GetEndpointUrl<T>(string space, bool preview = false) where T : IContentfulItem
         {
 			string host = preview ? ContentfulPreviewHost : ContentfulProductionHost;
             return string.Format(ContentfulApiBase + EndpointDictionary[typeof (T)], host, space);
