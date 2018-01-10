@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8F07C9B-AD52-498F-B32D-36425A68D1D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Contentful.Net.Framework</RootNamespace>
+    <AssemblyName>Contentful.Net.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Contentful.NET\ContentfulClient.cs">
+      <Link>ContentfulClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\Asset.cs">
+      <Link>DataModels\Asset.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\AssetDetails.cs">
+      <Link>DataModels\AssetDetails.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\ContentfulItemBase.cs">
+      <Link>DataModels\ContentfulItemBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\ContentType.cs">
+      <Link>DataModels\ContentType.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\Entry.cs">
+      <Link>DataModels\Entry.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\ErrorResponse.cs">
+      <Link>DataModels\ErrorResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\File.cs">
+      <Link>DataModels\File.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\IContentfulItem.cs">
+      <Link>DataModels\IContentfulItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\Includes.cs">
+      <Link>DataModels\Includes.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\Link.cs">
+      <Link>DataModels\Link.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\Locale.cs">
+      <Link>DataModels\Locale.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\Location.cs">
+      <Link>DataModels\Location.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\SearchResult.cs">
+      <Link>DataModels\SearchResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\Space.cs">
+      <Link>DataModels\Space.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\DataModels\SystemProperties.cs">
+      <Link>DataModels\SystemProperties.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Exceptions\ContentfulException.cs">
+      <Link>Exceptions\ContentfulException.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\HttpClientWrapper.cs">
+      <Link>HttpClientWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\IContentfulClient.cs">
+      <Link>IContentfulClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\IHttpClientWrapper.cs">
+      <Link>IHttpClientWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\ImageHelper.cs">
+      <Link>ImageHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\RestEndpointResolver.cs">
+      <Link>RestEndpointResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\BuiltInProperties.cs">
+      <Link>Search\BuiltInProperties.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Enums\Equality.cs">
+      <Link>Search\Enums\Equality.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Enums\InEquality.cs">
+      <Link>Search\Enums\InEquality.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Enums\NumericEquality.cs">
+      <Link>Search\Enums\NumericEquality.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Enums\OrderBy.cs">
+      <Link>Search\Enums\OrderBy.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Filters\DateTimeSearchFilter.cs">
+      <Link>Search\Filters\DateTimeSearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Filters\EqualitySearchFilter.cs">
+      <Link>Search\Filters\EqualitySearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Filters\FullTextSearchFilter.cs">
+      <Link>Search\Filters\FullTextSearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Filters\InclusionSearchFilter.cs">
+      <Link>Search\Filters\InclusionSearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Filters\LimitSearchFilter.cs">
+      <Link>Search\Filters\LimitSearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Filters\LocationSearchFilter.cs">
+      <Link>Search\Filters\LocationSearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Filters\NumericSearchFilter.cs">
+      <Link>Search\Filters\NumericSearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Filters\OrderBySearchFilter.cs">
+      <Link>Search\Filters\OrderBySearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\Filters\SkipSearchFilter.cs">
+      <Link>Search\Filters\SkipSearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\ISearchFilter.cs">
+      <Link>Search\ISearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Contentful.NET\Search\SearchFilterComparer.cs">
+      <Link>Search\SearchFilterComparer.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

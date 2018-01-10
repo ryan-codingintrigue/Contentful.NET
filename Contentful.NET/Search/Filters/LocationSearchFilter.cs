@@ -28,8 +28,8 @@ namespace Contentful.NET.Search.Filters
         /// <param name="propertyName">The name of the location property to search</param>
         /// <param name="latitude">The central latitude point to search from</param>
         /// <param name="longitude">The central longitude point to search from</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if the latitude/longitude does not fall within the expected values</exception>
-        /// <exception cref="ArgumentException">Thrown if the propertyName is not provided</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown if the latitude/longitude does not fall within the expected values</exception>
+        /// <exception cref="System.ArgumentException">Thrown if the propertyName is not provided</exception>
         public LocationSearchFilter(string propertyName, decimal latitude, decimal longitude)
         {
             if (latitude < -90 || latitude > 90)
@@ -51,8 +51,8 @@ namespace Contentful.NET.Search.Filters
         /// <param name="latitude">The central latitude point to search from</param>
         /// <param name="longitude">The central longitude point to search from</param>
         /// <param name="radius">The size of the radius (in kilometers) to search around</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if the latitude/longitude does not fall within the expected values</exception>
-        /// <exception cref="ArgumentException">Thrown if the propertyName is not provided</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown if the latitude/longitude does not fall within the expected values</exception>
+        /// <exception cref="System.ArgumentException">Thrown if the propertyName is not provided</exception>
         public LocationSearchFilter(string propertyName, decimal latitude, decimal longitude, decimal radius)
         {
             if (latitude < -90 || latitude > 90)
@@ -75,8 +75,8 @@ namespace Contentful.NET.Search.Filters
         /// <param name="longitude">The longitude of the bottom left corner of the rectangle</param>
         /// <param name="latitude2">The latitude of the top right corner of the rectangle</param>
         /// <param name="longitude2">The longitude of the top right corner of the rectangle</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if the latitude/longitude does not fall within the expected values</exception>
-        /// <exception cref="ArgumentException">Thrown if the propertyName is not provided</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown if the latitude/longitude does not fall within the expected values</exception>
+        /// <exception cref="System.ArgumentException">Thrown if the propertyName is not provided</exception>
         public LocationSearchFilter(string propertyName, decimal latitude, decimal longitude, decimal latitude2, decimal longitude2)
         {
             if (latitude < -90 || latitude > 90)

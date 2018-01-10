@@ -7,11 +7,11 @@ namespace Contentful.NET
     /// <summary>
     /// Internal HTTPClient Wrapper for unit testing GET requests
     /// </summary>
-    internal class HttpClientWrapper : IHttpClientWrapper
+    public class HttpClientWrapper : IHttpClientWrapper
     {
         private readonly HttpClient _baseClient;
 
-        internal HttpClientWrapper(HttpClient baseClient)
+        public HttpClientWrapper(HttpClient baseClient)
         {
             _baseClient = baseClient;
         }

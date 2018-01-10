@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Contentful.NET.Tests</RootNamespace>
     <AssemblyName>Contentful.NET.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -101,12 +101,11 @@
     <Compile Include="Search\Filters\OrderBySearchFilterTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contentful.NET.PCL\Contentful.NET.PCL.csproj">
-      <Project>{36dccd00-3752-447c-a62e-2b5bfd88b438}</Project>
-      <Name>Contentful.NET.PCL</Name>
+    <ProjectReference Include="..\Contentful.NET\Contentful.NET.csproj">
+      <Project>{9E3DA13C-5E34-4B8D-93DE-8DB1F8FDC2CF}</Project>
+      <Name>Contentful.NET</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

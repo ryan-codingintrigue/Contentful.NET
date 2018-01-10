@@ -5,7 +5,7 @@ namespace Contentful.NET.Search.Filters
     /// <summary>
     /// Filter which is used to limit the number of search results returned
     /// </summary>
-    internal class LimitSearchFilter : ISearchFilter
+    public class LimitSearchFilter : ISearchFilter
     {
         /// <summary>
         /// The name of the property to compare to
@@ -26,7 +26,7 @@ namespace Contentful.NET.Search.Filters
         /// Creates a new filter instance with the given results limit
         /// </summary>
         /// <param name="limit">The number of results to limit the search query to</param>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if the value passed for limit is not in the expected range: [0-Int32.MaxValue]</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown if the value passed for limit is not in the expected range: [0-Int32.MaxValue]</exception>
         public LimitSearchFilter(int limit)
         {
             if(limit < 0) throw new ArgumentOutOfRangeException("limit", limit, "Limit must be greater than or equal to zero");

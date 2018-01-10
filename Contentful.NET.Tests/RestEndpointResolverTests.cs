@@ -11,6 +11,7 @@ namespace Contentful.NET.Tests
         {
             var endpoint = RestEndpointResolver.GetEndpointUrl<Asset>("spaceId");
             const string expectedEndpoint = "https://cdn.contentful.com/spaces/spaceId/assets/";
+            
             Assert.AreEqual(expectedEndpoint, endpoint);
         }
 
